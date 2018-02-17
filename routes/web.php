@@ -11,10 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/teams', function () {
+Route::get('/', function () {
     return view('teams');
 });
+
+Route::get('/', 'TeamsController@index')->name('teams');
+
+Route::get('/teams', 'TeamsController@index')->name('teams');
+
+//mora biti iznad id
+Route::get('/teams/create', 'TeamsController@create')->name('createTeam');
+Route::post('/teams/store', 'TeamsController@store')->name('storeTeam');
+
+Route::get('/teams/{id}', 'TeamsController@show')->name('team');
+
+
+
+

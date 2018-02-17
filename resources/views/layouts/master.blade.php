@@ -5,8 +5,6 @@
     <title>@yield('title')</title>
     <link rel="stylesheet" href="/practice/public/css/app.css" />
 
-
-
 </head>
 <body>
 <nav class="navbar navbar-default">
@@ -23,8 +21,8 @@
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="#">Teams</a></li>
-                <li><a href="#">Add team</a></li>
+                <li><a href="{{ route('teams') }}">Teams</a></li>
+                <li><a href="{{ route('createTeam') }}">Add team</a></li>
             </ul>
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group">
