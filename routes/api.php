@@ -12,7 +12,19 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+/*
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-});
+});*/
+
+Route::post('/login', 'Auth\LoginController@authenticate');
+
+Route::middleware('jwt')->get('/teams', 'TeamsController@index');
+
+Route::middleware('jwt')->post('/teams', 'TeamsController@store');
+
+Route::middleware('jwt')->get('/teams/{id}', 'TeamsController@show');
+
+Route::middleware('jwt')->put('/teams/{id}', 'TeamsController@update');
+
+Route::middleware('jwt')->delete('/teams/{id}', 'TeamsController@destroy');
